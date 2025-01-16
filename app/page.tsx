@@ -1,101 +1,83 @@
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export default function Page() {
+    return (
+        <>
+            {/* Hero Section */}
+            <section className="relative w-full min-h-[80vh] flex items-center justify-center">
+                {/* Full-screen background image */}
+                <div className="absolute inset-0 -z-10">
+                    <Image
+                        src="/assets/Icon6.png" // Replace with your image path
+                        alt="Full Screen Background"
+                        layout="fill" // Ensures the image covers the container
+                        objectFit="cover" // Ensures the image scales properly
+                        className="fullscreen-image"
+                        priority // Optimizes for initial load
+                    />
+                </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                {/* Overlay content */}
+                <div className="relative z-10 text-center text-white bg-black/50 p-6 rounded-lg">
+                    <h1 className="text-5xl font-bold">Welcome to UARA</h1>
+                    <p className="mt-4 text-xl">
+                        Innovating the future of robotics at the University of Alberta
+                    </p>
+                    <button className="mt-6 bg-amber-950 text-white px-6 py-3 rounded-md font-medium hover:bg-amber-900">
+                        Learn More
+                    </button>
+                </div>
+            </section>
+
+            {/* About Us Section */}
+            <section className="bg-gray-950 py-16">
+                <div className="container mx-auto px-6 text-center">
+                    <h2 className="text-4xl font-bold text-white mb-6">About Us</h2>
+                    <p className="text-lg text-white leading-relaxed max-w-3xl mx-auto">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </section>
+
+            {/* Current Project Section */}
+            <section className="bg-black py-16">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        {/* Project Image */}
+                        <div className="relative w-full h-64 md:h-96">
+                            <Image
+                                src="/assets/Icon6.png"
+                                alt="Current Project"
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-lg shadow-lg"
+                            />
+                        </div>
+                        {/* Project Details */}
+                        <div>
+                            <h2 className="text-4xl font-bold text-white mb-6">
+                                Our Current Project
+                            </h2>
+                            <p className="text-lg text-white leading-relaxed mb-4">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            <a
+                                href="#"
+                                className="inline-block mt-4 bg-amber-950 text-white px-6 py-3 rounded-md font-medium hover:bg-amber-900"
+                            >
+                                Learn More About Our Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-black py-8">
+                <div className="container mx-auto px-6 text-center text-white">
+                    <p>&copy; {new Date().getFullYear()} University of Alberta Robotics Association. All rights reserved.</p>
+                </div>
+            </footer>
+        </>
+    );
 }

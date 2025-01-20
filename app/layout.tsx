@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { Hind_Siliguri } from "next/font/google";
-import { Header } from "./Header"; // Import the Header component
 import "./globals.css";
 
-const hindSiliguri = Hind_Siliguri({
-    variable: "--font-hind-siliguri",
-    subsets: ["latin", "latin-ext"],
-    weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
     title: "UofA Robotics Association",
@@ -21,9 +14,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={hindSiliguri.variable}>
+        <html lang="en">
         <body className="antialiased font-sans">
-        <Header />
         {children}
         </body>
         </html>

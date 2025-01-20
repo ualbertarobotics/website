@@ -11,16 +11,26 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    scroll-behavior: smooth;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-hind-siliguri), sans-serif;
 }
 
-.fullscreen-image {
-  filter: blur(8px); /* Adjust the blur amount */
-  -webkit-filter: blur(8px); /* For Safari compatibility */
+
+/* main page */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 3s ease-in-out infinite;
 }

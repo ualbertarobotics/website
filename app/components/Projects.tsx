@@ -11,6 +11,7 @@ const projects = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         images: ["/assets/templates/1.jpg", "/assets/templates/2.jpg"],
+        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
     {
         id: "project2",
@@ -19,6 +20,7 @@ const projects = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         images: ["/assets/templates/3.jpg", "/assets/templates/4.jpg"],
+        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
     {
         id: "project3",
@@ -27,6 +29,7 @@ const projects = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         images: ["/assets/templates/5.jpg", "/assets/templates/6.jpg"],
+        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
     {
         id: "project4",
@@ -35,9 +38,10 @@ const projects = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         images: ["/assets/templates/7.jpg", "/assets/templates/8.jpg"],
+        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
-
 ];
+
 
 // Helper to group projects in pairs
 function chunkArray<T>(arr: T[], size: number): T[][] {
@@ -223,11 +227,11 @@ export default function Projects() {
                         onClick={handleClose}
                     >
                         <motion.div
-                            className="bg-[#231f20] max-w-4xl w-full rounded-3xl overflow-hidden shadow-lg relative mx-4 my-8 sm:mx-0 sm:my-0 sm:max-h-none"
+                            className="bg-[#231f20] max-w-4xl w-full rounded-3xl overflow-hidden shadow-lg relative mx-4 my-8 sm:mx-0 sm:my-0 sm:max-h-none sm:min-h-0"
                             layoutId={`project-${selectedProject}`}
-                            initial={{ scale: 0.9 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.9 }}
+                            initial={{scale: 0.9}}
+                            animate={{scale: 1}}
+                            exit={{scale: 0.9}}
                             onClick={(e) => e.stopPropagation()} // Prevent clicks inside the modal from closing it
                         >
                             <div className="relative bg-black">
@@ -236,7 +240,8 @@ export default function Projects() {
                                         projects.find((p) => p.id === selectedProject)?.images[currentImageIndex]
                                     }
                                     alt=""
-                                    className="w-full h-auto max-h-[70vh] sm:max-h-full object-contain bg-black"
+                                    className="mx-auto max-h-[40vh] md:max-h-[70vh] max-w-[100%] object-contain"
+
                                     layoutId={`image-${selectedProject}`}
                                 />
                                 {/* Navigation Buttons */}
@@ -261,9 +266,9 @@ export default function Projects() {
                             </div>
                             <motion.div
                                 className="p-6"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 20 }}
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                exit={{opacity: 0, y: 20}}
                             >
                                 <p className="text-lg uppercase text-amber-500">
                                     {projects.find((p) => p.id === selectedProject)?.category}
@@ -274,7 +279,22 @@ export default function Projects() {
                                 <p className="text-xl text-white leading-relaxed">
                                     {projects.find((p) => p.id === selectedProject)?.description}
                                 </p>
+                                {/* Find Out More Button */}
+                                <div className="mt-6  text-center">
+                                    <a
+                                        href={projects.find((p) => p.id === selectedProject)?.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <button
+                                            className="border-2 border-theme1 text-theme2 px-10 py-2 rounded-xl font-medium hover:bg-amber-900"
+                                        >
+                                            Find Out More
+                                        </button>
+                                    </a>
+                                </div>
                             </motion.div>
+
                             {/* Close Button */}
                             <button
                                 className="absolute top-4 right-4 bg-white text-black p-2 rounded-full shadow-md hover:bg-gray-200"
@@ -301,8 +321,6 @@ export default function Projects() {
                     </motion.div>
                 )}
             </AnimatePresence>
-
-
 
 
         </section>

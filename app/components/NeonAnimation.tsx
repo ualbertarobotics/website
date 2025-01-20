@@ -50,7 +50,7 @@ const NeonAnimation: React.FC = () => {
                     <svg
                         ref={svgRef}
                         style={{visibility: 'hidden'}}
-                        viewBox="-100 0 1750.55 457.96"
+                        viewBox="-100 -100 1750.55 557.96"
                         className="w-[90vw] md:w-[70vw] lg:w-[60vw] xl:max-w-[800px] h-auto"
                     >
                         <defs>

@@ -7,8 +7,8 @@ const NeonAnimation: React.FC = () => {
     const [isSafari, setIsSafari] = useState(false);
 
     const { scrollY } = useScroll();
-    const parallaxTop = useTransform(scrollY, [0, 1000], ["0%", "-100%"]);
-    const parallaxBottom = useTransform(scrollY, [0, 300], ["0%", "20%"]);
+    const parallaxTop = useTransform(scrollY, [0, 1000], ["0%", "30%"]);
+    const parallaxBottom = useTransform(scrollY, [0, 1000], ["0%", "100%"]);
 
     useEffect(() => {
         // Detect Safari
@@ -45,26 +45,29 @@ const NeonAnimation: React.FC = () => {
     return (
         <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
             {/* Parallax SVG - Bottom Left */}
-            <motion.img
-                src="/assets/Slug.svg"
-                alt="Decorative SVG Bottom Left"
-                className="absolute bottom-[-20%] left-[-20%] w-[150px] md:w-[250px]"
-                style={{ y: parallaxBottom }}
-                initial={{ opacity: 0, rotate: 90, scale: 0.8 }}
-                animate={{ opacity: 0.7, rotate: 0, scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-            />
+            <div className="py-10">
+                <motion.img
+                    src="/assets/RoboArm.svg"
+                    alt="Decorative SVG Top Left"
+                    className="absolute top-[50%] left-[55%] w-[400px] xl:w-[50%] "
+                    style={{y: parallaxTop}}
+                    initial={{opacity: 0, rotate:0}}
+                    animate={{opacity: 0.5}}
+                    transition={{duration: 1.8, ease: "easeOut"}}
+                />
 
-            {/* Parallax SVG - Top Left */}
-            <motion.img
-                src="/assets/Slug.svg"
-                alt="Decorative SVG Top Left"
-                className="absolute top-[30%] left-[60%] w-[400px] md:w-[700px] rotate-180"
-                style={{ y: parallaxTop }}
-                initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
-                animate={{ opacity: 0.5, rotate: 0, scale: 1 }}
-                transition={{ duration: 1.8, ease: "easeOut" }}
-            />
+                {/* Parallax SVG - Top Left */}
+                <motion.img
+                    src="/assets/RoboArm2.svg"
+                    alt="Decorative SVG Top Left"
+                    className="absolute top-[-10vh] left-[-10vh] w-[600px] xl:w-[40%] rotate-180"
+                    style={{y: parallaxBottom}}
+                    initial={{opacity: 0, rotate: 195}}
+                    animate={{opacity: 0.4}}
+                    transition={{ duration: 1.8, ease: "easeOut" }}
+                />
+            </div>
+
 
             <div className="flex justify-center items-center bg-none py-10 relative">
                 {isSafari ? (

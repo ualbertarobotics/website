@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import '@next/font/google';
 
 export const metadata: Metadata = {
     title: "UofA Robotics Association",

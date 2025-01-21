@@ -1,9 +1,14 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const NeonAnimation: React.FC = () => {
     const svgRef = useRef<SVGSVGElement>(null);
     const [isSafari, setIsSafari] = useState(false);
+
+    const { scrollY } = useScroll();
+    const parallaxTop = useTransform(scrollY, [0, 1000], ["0%", "-100%"]);
+    const parallaxBottom = useTransform(scrollY, [0, 300], ["0%", "20%"]);
 
     useEffect(() => {
         // Detect Safari
@@ -38,8 +43,30 @@ const NeonAnimation: React.FC = () => {
     }, []);
 
     return (
-        <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black">
-            <div className="flex justify-center items-center bg-none py-10">
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
+            {/* Parallax SVG - Bottom Left */}
+            <motion.img
+                src="/assets/Slug.svg"
+                alt="Decorative SVG Bottom Left"
+                className="absolute bottom-[-20%] left-[-20%] w-[150px] md:w-[250px]"
+                style={{ y: parallaxBottom }}
+                initial={{ opacity: 0, rotate: 90, scale: 0.8 }}
+                animate={{ opacity: 0.7, rotate: 0, scale: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+            />
+
+            {/* Parallax SVG - Top Left */}
+            <motion.img
+                src="/assets/Slug.svg"
+                alt="Decorative SVG Top Left"
+                className="absolute top-[30%] left-[60%] w-[400px] md:w-[700px] rotate-180"
+                style={{ y: parallaxTop }}
+                initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
+                animate={{ opacity: 0.5, rotate: 0, scale: 1 }}
+                transition={{ duration: 1.8, ease: "easeOut" }}
+            />
+
+            <div className="flex justify-center items-center bg-none py-10 relative">
                 {isSafari ? (
                     <img
                         src="/assets/StaticHero.svg"
@@ -49,7 +76,7 @@ const NeonAnimation: React.FC = () => {
                 ) : (
                     <svg
                         ref={svgRef}
-                        style={{visibility: 'hidden'}}
+                        style={{ visibility: "hidden" }}
                         viewBox="-100 -100 1750.55 557.96"
                         className="w-[90vw] md:w-[70vw] lg:w-[60vw] xl:max-w-[800px] h-auto"
                     >

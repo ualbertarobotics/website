@@ -72,7 +72,7 @@ const NeonAnimation: React.FC = () => {
             <div className="flex justify-center items-center bg-none py-10 relative">
                 {isSafari ? (
                     <img
-                        src="/assets/Hero.svg"
+                        src="/assets/Hero.png"
                         alt="University of Alberta Robotics Association Logo"
                         className="w-[90vw] md:w-[70vw] lg:w-[60vw] xl:max-w-[800px] h-auto"
                     />

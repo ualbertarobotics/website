@@ -5,41 +5,44 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
     {
-        id: "project1",
-        title: "Autonomous Vehicles",
+        id: "rescue",
+        title: "RoboCup Rescue Subteam",
         category: "Robotics",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
-        images: ["/assets/templates/1.jpg", "/assets/templates/2.jpg"],
+            "Our RoboCup Rescue Robotics team focuses on designing and developing autonomous robots capable of navigating disaster scenarios to assist in search and rescue operations. Through cutting-edge research in robotics, AI, and control systems, the team competes globally to push the boundaries of rescue technology and inspire innovation.",
+        images: ["/assets/projects/RoboCup.jpg", "/assets/projects/RoboCup2.jpg"],
+        url: "https://rescuesim.robocup.org/",
+    },
+    {
+        id: "frc",
+        title: "FIRST Robotics Team Support",
+        category: "Outreach",
+        description:
+            "Our FIRST Robotics team is dedicated to mentoring local FRC teams, sharing expertise in engineering, programming, and strategy to help them excel in competitions. In addition, some members actively contribute to organizing and running the BC Regional, fostering a vibrant robotics community and inspiring the next generation of innovators.",
+        images: ["/assets/projects/FRC.jpg", "/assets/projects/FRC2.jpg"],
+        url: "https://www.firstinspires.org/robotics/frc",
+    },
+    {
+        id: "ar",
+        title: "Augmented Reality Glasses",
+        category: "Electronics",
+        description:
+            "This project explores the creation of low-cost, DIY augmented reality glasses designed for accessibility and innovation. By integrating microdisplays, sensors, and open-source software, the glasses overlay digital information onto the real world, opening new possibilities for hands-on learning and everyday applications.",
+        images: ["/assets/projects/AR.jpg", "/assets/projects/AR Glasses.jpg"],
         url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
     {
-        id: "project2",
-        title: "Robotic Arms",
-        category: "Mechanical",
+        id: "education",
+        title: "Educational Robotics Subteam",
+        category: "Education",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
-        images: ["/assets/templates/3.jpg", "/assets/templates/4.jpg"],
+            "Our Educational Robotics Subteam is dedicated to fostering hands-on learning by building robots from the ground up—sometimes even from scraps! By running workshops and hosting events, we aim to promote robotics development, inspire creativity, and make robotics accessible to everyone, regardless of their experience level.",
+        images: ["/assets/projects/Learning.jpg", "/assets/projects/Learning2.jpg"],
         url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
     },
-    {
-        id: "project3",
-        title: "AI-Powered Drones",
-        category: "AI",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
-        images: ["/assets/templates/5.jpg", "/assets/templates/6.jpg"],
-        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
-    },
-    {
-        id: "project4",
-        title: "Underwater Exploration",
-        category: "Innovation",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
-        images: ["/assets/templates/7.jpg", "/assets/templates/8.jpg"],
-        url: "https://www.youtube.com/watch?v=XfELJU1mRMg",
-    },
+
+
+
 ];
 
 
@@ -321,8 +324,6 @@ export default function Projects() {
                     </motion.div>
                 )}
             </AnimatePresence>
-
-
         </section>
     );
 }

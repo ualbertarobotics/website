@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         url: "https://uara.ca",
         images: [
             {
-                url: "/Logo.svg",
+                url: "/assets/Logo.png",
                 width: 1200,
                 height: 1200,
                 alt: "University of Alberta Robotics Association Logo",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         title: "UofA Robotics Association",
         description:
             "Join the University of Alberta Robotics Association to explore innovation, creativity, and cutting-edge robotics technology.",
-        images: ["/Logo.svg"],
+        images: ["/assets/Logo.png"],
     }
 };
 

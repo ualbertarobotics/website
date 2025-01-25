@@ -10,7 +10,7 @@ export default function JoinUsSection() {
             const response = await fetch("https://ipapi.co/json/");
             const data = await response.json();
 
-            if (data.city === "Edmonton") {
+            if (data.region_code === "AB") {
                 window.location.href = "https://discord.gg/hTksjuVhJ2";
             } else {
                 setModalMessage(
